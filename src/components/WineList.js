@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {View, Text} from 'react-native'
+import {View, Text, ScrollView} from 'react-native'
 import axios from 'axios'
-
+import WineInfo from './WineInfo'
 
 //class based components have know about lifecycle, has those methods
 
@@ -16,15 +16,18 @@ class WineList extends Component {
   componentWillMount() {   //this will have to fetch my api endpoint
     console.log('component will mount')
     axios.get('https://cryptic-crag-39792.herokuapp.com/') // promise returned
-      .then(response => this.setState({wines: response.data}))
+      .then(response => {
+         this.setState({wines:response.data.wines})
+      })
+      console.log(this.state)
   }
 
    componentDidMount() {
     console.log('component did mount')
   }
 
-  renderWine() {
-    this.state.wines.map(wine => <Text>{wine.title}</Text>)
+  renderWines() {
+    return this.state.wines.map((wine,index) => <WineInfo key={index} wine={wine}/> )
   }
 
 
@@ -33,9 +36,10 @@ class WineList extends Component {
     console.log('state here:',this.state)
 
     return (
-      <View>
+      <ScrollView>
           <Text>The Wine List</Text>
-      </View>
+          { this.renderWines() }
+      </ScrollView>
    )
   }
 }

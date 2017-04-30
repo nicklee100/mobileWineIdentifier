@@ -14,7 +14,7 @@ import WineList from './src/components/WineList'
 export default class mobileWineIdentifier extends Component {
   render() {
     return (
-      <View>
+      <View style={{flex: 1}}>
         <Header headerText={'WineList Identifier!!!'}/>
         <WineList />
       </View>
