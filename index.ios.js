@@ -8,19 +8,22 @@ import {
 
 import Header from './src/components/header'
 import WineList from './src/components/WineList'
+import RouterComponent from './src/Router'
 
 
 
 export default class mobileWineIdentifier extends Component {
   render() {
     return (
-      <View style={{flex: 1}}>
-        <Header headerText={'WineList Identifier!!!'}/>
-        <WineList />
+      <View>
+         <RouterComponent />
       </View>
     );
   }
 }
+
+//<Header headerText={'WineList Identifier!!!'}/>
+ // <WineList />
 
 
 

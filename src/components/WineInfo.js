@@ -27,7 +27,6 @@ const WineInfo = ({wine}) => { // vs props
         Buy Wine
       </Button>
     </WineSection>
-
   </Card>
  )
 }

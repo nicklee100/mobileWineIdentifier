@@ -9,7 +9,7 @@ class WineList extends Component {
   constructor(props){
     super(props)    //if i want ot access this.props in construtor
     this.state = {
-      wines: []
+      wines: [{"name":"Guigal Cotes Rouge","code":"guigal-cotes-rouge-2010","region":"France > Rh\u00f4ne > Southern Rh\u00f4ne > C\u00f4tes-du-rh\u00f4ne","winery":"E. Guigal","winery_id":"e-guigal","varietal":"Grenache^Syrah","price":"11.99","vintage":"2010","type":"Red Wine","link":"http:\/\/www.snooth.com\/wine\/guigal-cotes-rouge-2010\/","tags":"","image":"http:\/\/ei.isnooth.com\/multimedia\/d\/e\/f\/image_3780416_square.jpeg","snoothrank":3.5,"available":1,"num_merchants":192,"num_reviews":21}]
     }
   }
 
@@ -19,7 +19,7 @@ class WineList extends Component {
       .then(response => {
          this.setState({wines:response.data.wines})
       })
-      console.log(this.state)
+
   }
 
    componentDidMount() {
@@ -36,10 +36,10 @@ class WineList extends Component {
     console.log('state here:',this.state)
 
     return (
-      <ScrollView>
-          <Text>The Wine List</Text>
-          { this.renderWines() }
-      </ScrollView>
+      <View>
+            <Text>The Wine List</Text>
+            { this.renderWines() }
+      </View>
    )
   }
 }
