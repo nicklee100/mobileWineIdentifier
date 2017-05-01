@@ -6,17 +6,24 @@ import {
   View
 } from 'react-native';
 
+import { StackNavigator } from 'react-navigation'
+
 import Header from './src/components/header'
 import WineList from './src/components/WineList'
 import RouterComponent from './src/Router'
+import CameraScreen from './src/components/Camera'
 
 
 
-export default class mobileWineIdentifier extends Component {
+
+export default class mobileWineIdentifier2 extends Component {
+  static navigationOptions = {
+    title: 'Welcome'
+  }
   render() {
     return (
       <View>
-         <RouterComponent />
+         <WineList />
       </View>
     );
   }
@@ -27,4 +34,18 @@ export default class mobileWineIdentifier extends Component {
 
 
 
-AppRegistry.registerComponent('mobileWineIdentifier', () => mobileWineIdentifier);
+
+// const NavApp = StackNavigator({
+//   Home: { screen: RouterComponent },
+//   Camera: { screen: Camera }
+// })
+
+// const mobileWineIdentifier = StackNavigator({
+//   Home: { screen: mobileWineIdentifier2 },
+//   Camera: { screen: CameraScreen}
+// });
+
+//AppRegistry.registerComponent('mobileWineIdentifier', () => NavApp);
+
+
+AppRegistry.registerComponent('mobileWineIdentifier', () => mobileWineIdentifier2);

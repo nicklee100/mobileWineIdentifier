@@ -1,11 +1,17 @@
 import React, {Component} from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
+import { Text, View, TouchableOpacity, Button } from 'react-native'
+import ConnectedWineList from './ConnectedWineList'
+      // <ConnectedWineList/>
 
 
 class CameraComp extends Component {
 
+  static navigationOptions ={
+    title: 'yo'
+  }
 
   render(){
+
     styles = {
       cameraStyles:{
         flexDirection: 'row',
@@ -23,18 +29,18 @@ class CameraComp extends Component {
   return (
      <View style={styles.cameraStyles}>
         <Text style={styles.cameraText}>Take a photo</Text>
-
+        <Button onPress={ () => navigate('ConnectedWineList')} title='Take a Picture'/>
 
       </View>
   )
 }
 
+}
 
+CameraComp.navigationOptions = {
+  title: 'Camera Screen'
 }
 
 
 
-export default CameraComp
-
-
-
+//export default CameraComp
