@@ -20,7 +20,7 @@ const WineInfo = ({wine}) => { // vs props
       </View>
     </WineSection>
     <WineSection>
-      <Image style={styles.imageStyle} source={{ uri: wine.image }} />
+      {/*<Image style={styles.imageStyle} source={{ uri: wine.image }} />*/}
     </WineSection>
     <WineSection>
       <Button onPressProp={() => Linking.openURL(wine.link)}>
@@ -44,7 +44,7 @@ const styles = {
     width: 50
   },
   imageStyle:{
-    height: 300,
+    height: 50,
     flex: 1,
     width: null,
   },
